@@ -1,0 +1,52 @@
+Fill out the code that implements a simple PCA algorithm that reduces dimensionality by only 2 principal components, with python and numpy library. Two arguments will be given in the commandline: input_filename, output_filename. Skip the data centering stage.
+ 
+def simple_pca(input_filename: str, output_filename: str):
+    """
+    Performs a simple PCA to reduce dimensionality to 2 principal components.
+
+    The input is a comma-separated matrix (CSV file) of size n x m.
+    The output is a comma-separated matrix (CSV file) of size n x 2,
+    representing the data projected onto the first two principal components.
+
+    Args:
+        input_filename (str): Path to the input CSV file (n x m matrix).
+        output_filename (str): Path to the output CSV file (n x 2 matrix).
+    """
+    try:
+        # 1. Load the data, exclude header if exists
+        # 'data' is an n x m NumPy array
+
+        # Handle edge cases for data size
+            # If the data is a single row, reshape it
+ 
+        # If a feature(column) is not numerical, encode the values into integers
+
+        
+
+        # 2.Instead of Covariance matrix, compute Gram Matrix X.T, X
+        
+
+        # 3. Compute Eigenvalues and Eigenvectors
+        # 'eigenvalues' is a vector of m eigenvalues
+        # 'eigenvectors' is an m x m matrix, where each column is an eigenvector
+
+
+        # 4. Select the Top 2 Eigenvectors (Principal Components)
+        # Sort eigenvalues in descending order and get the indices
+        
+        # Select the indices for the top 2 eigenvectors as principal_components which is m x 2 matrix
+        
+
+        # 5. Project the Data
+        # Project the centered data onto the 2 principal components
+        # (n x m) dot (m x 2) -> (n x 2)
+        # 'data_projected' is the final n x 2 matrix
+
+        # 6. Save the Result
+        # The projected data is saved to a new CSV file
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+1. The range of the values in data grows proportionally according to alpha. 
+2. The 2d representation looks like a parabola in general, except in case of alpha big as 10, it looks like 2 symmetrix parabola overlapped
+3. With alpha less than approximately 0.15, the 2d representation looks convex
+   With alpha greater than approximately 0.2, the 2d represenation looks concave.

@@ -1,0 +1,50 @@
+Implement a simple PCA algorithm that reduces dimensionality by only 2 principal components, with python and numpy library. Two arguments will be given in the commandline: input_filename, output_filename. Normalizing rows by dividing their norm will be included.
+ 
+def simple_pca(input_filename: str, output_filename: str):
+    """
+    Performs a simple PCA to reduce dimensionality to 2 principal components.
+
+    The input is a comma-separated matrix (CSV file) of size n x m.
+    The output is a comma-separated matrix (CSV file) of size n x 2,
+    representing the data projected onto the first two principal components.
+
+    Args:
+        input_filename (str): Path to the input CSV file (n x m matrix).
+        output_filename (str): Path to the output CSV file (n x 2 matrix).
+    """
+    try:
+        # 1. Load the data, exclude header if exists
+        # 'data' is an n x m NumPy array
+
+        # Handle edge cases for data size
+            # If the data is a single row, reshape it
+        
+        # If a feature(column) is not numerical, map the values into integers
+        
+        # Divide the rows by their norm
+
+        # 2.  Standardize the data (Mean-Centering)
+
+
+        # 3. Instead of Covariance matrix, compute Gram Matrix
+        
+
+        # 4. Compute Eigenvalues and Eigenvectors
+        # 'eigenvalues' is a vector of m eigenvalues
+        # 'eigenvectors' is an m x m matrix, where each column is an eigenvector
+
+        # 5. Select the Top 2 Principal Components (Eigenvectors)
+        # Sort eigenvalues in descending order and get the indices
+        
+        # Select the indices for the top 2 components
+        
+        # Select the corresponding eigenvectors (principal components)
+        # The result 'principal_components' is an m x 2 matrix
+
+        # 6. Project the Data
+        # Project the centered data onto the 2 principal components
+        # (n x m) dot (m x 2) -> (n x 2)
+        # 'data_projected' is the final n x 2 matrix
+
+        # 7. Save the Result
+        # The projected data is saved to a new CSV file

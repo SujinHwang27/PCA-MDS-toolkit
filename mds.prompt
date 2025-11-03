@@ -1,0 +1,64 @@
+Implement a simple MDS (Multidimensional Scaling) algorithm that reduces dimensionality by only 2 principal components, with python and numpy library. There are three arguments: input_filename, output_filename and alpha. Take input dataset of comma separated matrix of size n×m in a csv file and output nx2 matrix in a csv file.
+
+def simple_mds(input_filename: str, output_filename: str, alpha:float):
+    """
+    Performs a simple Classical Multidimensional Scaling (MDS) to reduce 
+    dimensionality to 2 components.
+
+    The input is a comma-separated matrix (CSV file) of size n x m.
+    The output is a comma-separated matrix (CSV file) of size n x 2,
+    representing the data embedded in 2 dimensions while preserving distances.
+
+    Args:
+        input_filename (str): Path to the input CSV file (n x m matrix).
+        output_filename (str): Path to the output CSV file (n x 2 matrix).
+        alpha (float): The exponential scaler of distance matrix D
+    """
+    try:
+        # 1. Load the data
+        # 'data' is an n x m NumPy array (n observations, m features)
+
+        # Convert string features into integer values
+
+
+        # 2. Calculate the Squared Euclidean Distance Matrix
+        # D is an n x n matrix of distances between all pairs of points
+        # Exponentially scale the distances, by alpha (alpha>=0)
+
+        # dist_matrix[i, j] = (||X_i - X_j||^2)^(alpha/2)
+
+
+        # 3. Double Centering
+        # This transforms the squared distance matrix (D) into the Gram matrix (G) 
+        # G[i,j] = -d_ij/2 + d_i/(2n) + d_j/(2n) - d/(2(n^2))
+        # where d_ij is D[i, j], d_i is sum of ith row in D, d_j is sum of jth row in D, d is sum of all elements in D. 
+
+ 
+
+        # 4. Compute Eigenvalues and Eigenvectors of the Gram Matrix (G) 
+        # eigh is used because the Gram matrix B is symmetric.
+        eigenvalues, eigenvectors = eigh(G) 
+
+
+        # 5. Select the Top 2 Principal Components (Dimensions)
+        # Sort eigenvalues in descending order and get top 2 eigenvalues 
+        
+        # Select the indices of corresponding eigenvectors 
+        
+        # Select the corresponding eigenvalues and eigenvectors
+ 
+            
+        # 6. Project the Data (The MDS Solution)
+        # The 2D coordinates Y are calculated as: Y = V_k * Lambda_k^(1/2)
+        # V_k is n x 2; Lambda_k^(1/2) is 2 x 2 diagonal matrix (sqrt of eigenvalues)
+        
+        # Element-wise multiplication of the eigenvector columns by the sqrt of eigenvalues
+        # This results in the final n x 2 projected coordinates
+        data_projected = V_k * Lambda_sqrt 
+
+
+        # 7. Save the Result
+        # The projected data (n x 2) is saved to a new CSV file
+
+
+# process input from command line arguments and run simple_mds
